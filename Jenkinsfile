@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {             
             steps {
                 sh "rm -rf hello-world-war"
-                sh "git clone "https://github.com/Dev86-git/hello-world-war.git"
+                sh "git clone https://github.com/Dev86-git/hello-world-war.git"
             }
         }
            stage('build') {             
