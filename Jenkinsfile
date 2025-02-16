@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'slave1' }
+    agent { label 'slave4' }
 
     parameters {
         string(name: 'command1', description: 'Give build the command')
@@ -23,7 +23,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh "scp target/*.war root@172.31.91.47:/opt/apache-tomcat-10.1.34/webapps/"
+                sh "scp target/*.war root@172.31.80.158:/opt/apache-tomcat-10.1.34/webapps/"
             }
         }
     }
