@@ -10,15 +10,17 @@ pipeline {
     stages {
         stage('Checkout') {             
             steps {
-                sh "rm -rf hello-world-war"
-                sh "git clone https://github.com/Dev86-git/hello-world-war.git"
+               // sh "rm -rf hello-world-war"
+               // sh "git clone https://github.com/Dev86-git/hello-world-war.git"
+                checkoutcode()
             }
         }
 
         stage('Build') {
             steps {
-                sh "cd hello-world-war"
-                 sh "mvn clean package"
+               // sh "cd hello-world-war"
+                // sh "mvn clean package"
+                buildproject()
                         }
         }
 
