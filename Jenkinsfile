@@ -23,6 +23,16 @@ pipeline {
                 buildproject()
                         }
         }
+        stage('download') {
+            steps {             
+            
+withCredentials([string(credentialsId: 'jfrogtoken', variable: 'JFROG_API_TOKEN')]) {
+                        sh '''
+                        curl -L -u  "devarajkushi@gmail.com:\${JFROG_API_TOKEN}" -o "devraj-kushi-1.0.0.war" "https://trialfb6xdx.jfrog.io/artifactory/hello-world-war-libs-release/com/efsavage/hello-world-war/3.1.1/hello-world-war-3.1.1.war"
+                        '''
+}
+            }
+        }
 
         stage('Deploy') {
             steps {
